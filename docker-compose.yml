@@ -12,6 +12,7 @@ services:
       - READIUM_LCPSERVER_CONFIG=/etc/readium-lcp-server/lcp-config.yaml # configuration file
     volumes:
       - /etc/readium-lcp-server:/etc/readium-lcp-server:cached
+      - /readium/lcpfiles:/readium/lcpfiles
     networks:
       - readium # Docker containers (services) that need to connect to each other should be on the same network.
   license-status-server:
@@ -25,6 +26,7 @@ services:
       - READIUM_LSDSERVER_CONFIG=/etc/readium-lcp-server/lsd-config.yaml
     volumes:
       - /etc/readium-lcp-server:/etc/readium-lcp-server:cached
+      - /readium/lcpfiles:/readium/lcpfiles
     networks:
       - readium
 networks:
